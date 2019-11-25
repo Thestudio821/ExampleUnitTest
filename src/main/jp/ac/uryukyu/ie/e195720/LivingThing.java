@@ -1,7 +1,5 @@
 package jp.ac.uryukyu.ie.e195720;
 
-import javax.swing.*;
-
 public class LivingThing {
     String name;
     int hitPoint;
@@ -15,27 +13,30 @@ public class LivingThing {
         dead = false;
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
-
-    public boolean isDead() {
+    boolean getDead() {
         return !dead;
     }
-
+    void setDead(boolean dead){
+        this.dead = dead;
+    }
     String getName() {
         return name;
     }
-
     public void setName(String opponent) {
         this.name = opponent;
     }
-
     int getHitPoint() {
         return hitPoint;
     }
-
     void setHitPoint(int HP) {
         this.hitPoint = HP;
     }
-
+    public int getAttack(){
+        return this.attack;
+    }
+    public void setAttack(int A){
+        this.attack = A;
+    }
     public void attack(LivingThing opponent) {
         int damage = (int) (Math.random() * attack);
         System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, opponent.getName(), damage);
