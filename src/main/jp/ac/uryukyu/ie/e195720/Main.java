@@ -3,6 +3,7 @@ package jp.ac.uryukyu.ie.e195720;
 /**
  * Created by tnal on 2016/11/13.
  * Correction by e195720 on 2019/11/25
+ * https://github.com/Thestudio821/ExampleUnitTest.git
  */
 public class Main {
     public static void main(String[] args){

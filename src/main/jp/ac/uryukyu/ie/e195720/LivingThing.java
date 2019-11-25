@@ -1,11 +1,11 @@
 package jp.ac.uryukyu.ie.e195720;
 
-public class LivingThing {
-    String name;
-    int hitPoint;
-    int attack;
-    int experience;
-    boolean dead;
+ public class LivingThing {
+     private String name;
+     private int hitPoint;
+     private int attack;
+     private int experience;
+     private boolean dead;
 
     LivingThing(String name, int maximumHP, int attack, int experience) {
         this.name = name;
@@ -18,6 +18,7 @@ public class LivingThing {
     boolean getDead() {
         return !dead;
     }
+
     void setDead(boolean dead){
         this.dead = dead;
     }
@@ -33,17 +34,8 @@ public class LivingThing {
     void setHitPoint(int HP) {
         this.hitPoint = HP;
     }
-    public int getAttack(){
-        return this.attack;
-    }
-    public void setAttack(int A){
-        this.attack = A;
-    }
     public int getExperience(){
         return experience;
-    }
-    public void setExperience(int exp){
-        this.experience = exp;
     }
     public void attack(LivingThing opponent) {
         int damage = (int) (Math.random() * attack);
@@ -53,7 +45,6 @@ public class LivingThing {
         }
     }
 
-
     public void wounded(int damage) {
         String name = getName();
         int experience = getExperience();
@@ -61,7 +52,7 @@ public class LivingThing {
         if (hitPoint < 0) {
             dead = true;
             System.out.printf("%sは倒れた。\n", name);
-            System.out.printf("パーティーは%eの経験値を得た。", experience );
+            System.out.printf("パーティーは%dの経験値を得た。", experience );
         }
     }
 }

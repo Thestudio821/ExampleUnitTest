@@ -5,6 +5,7 @@ public class Hero extends LivingThing {
         super(name, maximumHP, attack, experience);
     }
 
+    @Override
     public void wounded(int damage){
         String name = getName();
         int hitPoint = getHitPoint();
