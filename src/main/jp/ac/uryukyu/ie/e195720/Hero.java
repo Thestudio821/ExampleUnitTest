@@ -7,6 +7,7 @@ public class Hero extends LivingThing {
 
     public void wounded(int damage){
         String name = getName();
+        int hitPoint = getHitPoint();
         hitPoint -= damage;
         if( hitPoint < 0 ) {
             dead = true;

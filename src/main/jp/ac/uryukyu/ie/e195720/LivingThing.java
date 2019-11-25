@@ -1,33 +1,51 @@
 package jp.ac.uryukyu.ie.e195720;
 
+import javax.swing.*;
+
 public class LivingThing {
     String name;
     int hitPoint;
     int attack;
     boolean dead;
 
-    LivingThing(String name, int maximumHP, int attack){
+    LivingThing(String name, int maximumHP, int attack) {
         this.name = name;
         hitPoint = maximumHP;
         this.attack = attack;
         dead = false;
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
-    public boolean isDead(){
+
+    public boolean isDead() {
         return !dead;
     }
 
-    public String getName(){
+    String getName() {
         return name;
     }
+
+    public void setName(String opponent) {
+        this.name = opponent;
+    }
+
+    int getHitPoint() {
+        return hitPoint;
+    }
+
+    void setHitPoint(int HP) {
+        this.hitPoint = HP;
+    }
+
     public void attack(LivingThing opponent) {
         int damage = (int) (Math.random() * attack);
         System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, opponent.getName(), damage);
         opponent.wounded(damage);
     }
+
     public void wounded(int damage) {
+        String name = getName();
         hitPoint -= damage;
-        if ( hitPoint < 0 ) {
+        if (hitPoint < 0) {
             dead = true;
             System.out.printf("%sは倒れた。\n", name);
         }
