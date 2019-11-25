@@ -61,7 +61,7 @@ public class LivingThing {
         if (hitPoint < 0) {
             dead = true;
             System.out.printf("%sは倒れた。\n", name);
-            System.out.printf("%eの経験値を得た。", experience );
+            System.out.printf("パーティーは%eの経験値を得た。", experience );
         }
     }
 }

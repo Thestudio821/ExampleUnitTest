@@ -14,7 +14,7 @@ public class Enemy extends LivingThing{
         if( hitPoint < 0 ) {
             setDead(true);
             System.out.printf("%sは倒れた。\n", name);
-            System.out.printf("%dの経験値を得た。\n", experience);
+            System.out.printf("パーティーは%dの経験値を得た。\n", experience);
         }
     }
 
