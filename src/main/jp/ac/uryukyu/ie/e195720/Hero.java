@@ -11,7 +11,7 @@ public class Hero extends LivingThing {
         int hitPoint = getHitPoint();
         hitPoint -= damage;
         setHitPoint(hitPoint);
-        if( hitPoint < 0 ) {
+        if( hitPoint <= 0 ) {
             setDead(true);
             System.out.printf("%sは道半ばで力尽きてしまった。\n", name);
         }

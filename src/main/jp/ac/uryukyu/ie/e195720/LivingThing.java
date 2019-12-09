@@ -40,7 +40,7 @@ package jp.ac.uryukyu.ie.e195720;
     }
     public void attack(LivingThing opponent) {
         int damage = (int) (Math.random() * attack);
-        if (hitPoint >= 0) {
+        if (hitPoint > 0) {
             System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, opponent.getName(), damage);
             opponent.wounded(damage);
         }
@@ -50,7 +50,7 @@ package jp.ac.uryukyu.ie.e195720;
         String name = getName();
         int experience = getExperience();
         hitPoint -= damage;
-        if (hitPoint < 0) {
+        if (hitPoint <= 0) {
             dead = true;
             System.out.printf("%sは倒れた。\n", name);
             System.out.printf("パーティーは%dの経験値を得た。", experience );
